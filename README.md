@@ -14,9 +14,10 @@ It is a plain static site: no build step, no framework, no third-party scripts. 
 | `assets/js/main.js` | Page behaviour: navigation, scroll effects, tabs, project rail. |
 | `assets/js/world.js` | The line-drawn "corridor" that the hero and the sectors section fly through. |
 | `assets/js/renderer.js` | Draws that corridor onto a canvas. |
-| `assets/js/presence.js` | The India map: **cities and corridors are listed here**. |
+| `assets/js/presence.js` | The India map: **project sites and corridors are listed here**. |
 | `assets/js/map-data.js` | Generated map geometry. Do not edit by hand. |
 | `assets/img/` | Logo files, favicons, social share image. |
+| `assets/img/clients/` | Logos of the authorities shown in the Clients section. |
 | `assets/fonts/` | Mona Sans and Geist Mono (SIL Open Font License, see `LICENSE.txt` there). |
 | `assets/media/` | Empty for now: photographs and video go here. |
 
@@ -32,11 +33,27 @@ Then open http://localhost:8000. (Opening `index.html` directly from the file sy
 
 ### Text
 
-All wording is in `index.html`. Each section is marked with a comment banner (`Hero`, `Who we are`, `Sectors`, `Delivery models`, `Projects`, `Presence`, `Clients`, `Work with us`, `Contact`).
+All wording is in `index.html`. Each section is marked with a comment banner, in page order: `Hero`, `Who we are`, `Sectors`, `Projects`, `Presence`, `Clients`, `Delivery models`, `Work with us`, `Contact`.
 
 ### Contact details
 
-The site currently shows one email address, `info@sksinfraprojects.com`, and the two office cities. To change the address, find and replace it throughout `index.html`. Phone numbers and street addresses can be added to the `offices` list in the Contact section and to the footer.
+The head-office card in the Contact section shows the Agra address, the email address `info@sksinfraprojects.com` and the Noida corporate office. To add a phone number, copy one `<li>…</li>` block inside `office__list` in `index.html` and change the heading and text. The same details appear in the footer and in the `application/ld+json` block near the top of the file (which search engines read), so update all three together. To change the email address, find and replace it throughout `index.html`.
+
+### Contact form
+
+The site has no server of its own, so the form cannot store or send messages by itself. As shipped, pressing **Send enquiry** checks the fields and then opens the visitor's own email app with the message already written and addressed to `info@sksinfraprojects.com`; the visitor presses send there.
+
+To have enquiries delivered directly, without the visitor's email app, sign up with a form-handling service (for example Web3Forms or Formspree), and put the address it gives you in the form's `data-endpoint` attribute in `index.html`:
+
+```html
+<form class="form" data-contact-form data-endpoint="https://example-form-service.com/your-form-id" …>
+```
+
+The form then posts the name, email, message and consent fields to that address and shows a thank-you message on the page. Leave `data-endpoint` empty to go back to the email-app behaviour.
+
+### Client logos
+
+Each tile in the Clients section is one `<li>` with an image from `assets/img/clients/`. To replace a logo, save the new file over the old one (same name) and update the `width` and `height` on its `<img>` so that it sits comfortably beside the others (roughly 110 to 200 wide and 40 to 76 tall). Vector (SVG) or large PNG files give the sharpest result. The logos belong to their respective organisations; check that you have their consent to display them.
 
 ### Adding project photographs
 
@@ -67,9 +84,11 @@ The animated corridor switches itself off when a video is present.
 
 Copy one `<article class="card">…</article>` block in the Projects section and change the text. `data-still` picks the artwork: `bypass`, `ring`, `hills`, `corridor`, `rail`, `rail2` or `power`.
 
-### Adding a city or corridor to the map
+### Updating the map and the project counts
 
-Open `assets/js/presence.js`. Add a row to `PLACES` with the name, latitude, longitude, state and type; add a row to `CORRIDORS` for a rail or road line. Then add the city name to the matching state in the Presence section of `index.html`. A new state needs the map geometry to be regenerated.
+The number of projects beside each state is plain text in the Presence section of `index.html`; change it there.
+
+The marks on the map are listed in `assets/js/presence.js`, with no names: a single-site project is a row in `SITES` (latitude, longitude, state) and a corridor project is a row in `CORRIDORS` (the states it runs through, then its points). A state that is not yet one of the ten needs the map geometry to be regenerated.
 
 ### Logo
 

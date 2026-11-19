@@ -504,6 +504,64 @@ function initPresence() {
 }
 
 /* ------------------------------------------------------------------------ */
+/* Contact form                                                              */
+/* ------------------------------------------------------------------------ */
+/* The site is static, so there is no server to post to. If the form's
+   data-endpoint holds a form-service URL the enquiry is sent there; otherwise
+   the visitor's own email app is opened with the message filled in. */
+function initContact() {
+  const form = $('[data-contact-form]');
+  if (!form) return;
+  form.noValidate = true;                                    // we show our own messages below
+  const status = $('.form__status', form), button = $('button[type="submit"]', form);
+  const controls = $$('input, textarea', form);
+  const to = form.dataset.to;
+
+  function check(el) {
+    const ok = el.checkValidity();
+    const holder = el.closest('.field, .check'), err = document.getElementById(`${el.id}-err`);
+    el.setAttribute('aria-invalid', String(!ok));
+    if (holder) holder.classList.toggle('is-invalid', !ok);
+    if (err) { err.hidden = ok; err.textContent = ok ? '' : el.dataset.error; }
+    return ok;
+  }
+  for (const el of controls) {
+    el.addEventListener('blur', () => { if (el.value.trim() || el.getAttribute('aria-invalid') === 'true') check(el); });
+    el.addEventListener('input', () => { if (el.getAttribute('aria-invalid') === 'true') check(el); });
+    el.addEventListener('change', () => { if (el.type === 'checkbox') check(el); });
+  }
+  const say = (text, tone) => { status.textContent = text; if (tone) status.dataset.tone = tone; else delete status.dataset.tone; };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const bad = controls.filter((el) => !check(el));
+    if (bad.length) { say('Please complete the highlighted fields.', 'error'); bad[0].focus(); return; }
+    const data = new FormData(form);
+    const name = String(data.get('name')).trim(), email = String(data.get('email')).trim(), message = String(data.get('message')).trim();
+    const endpoint = form.dataset.endpoint;
+    if (!endpoint) {
+      const subject = `Website enquiry from ${name}`;
+      const body = `${message}\n\n${name}\n${email}`;
+      window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      say(`Your email app should now be open with the message ready to send. If nothing opened, write to us at ${to}.`, 'ok');
+      return;
+    }
+    button.disabled = true;
+    say('Sending…');
+    try {
+      const res = await fetch(endpoint, { method: 'POST', headers: { Accept: 'application/json' }, body: data });
+      if (!res.ok) throw new Error(`Form service answered ${res.status}`);
+      form.reset();
+      say('Thank you. Your enquiry has been sent and our team will be in touch.', 'ok');
+    } catch {
+      say(`Sorry, that did not go through. Please email us at ${to}.`, 'error');
+    } finally {
+      button.disabled = false;
+    }
+  });
+}
+
+/* ------------------------------------------------------------------------ */
 /* Pointer micro-interactions                                                */
 /* ------------------------------------------------------------------------ */
 function initPointer() {
@@ -527,7 +585,7 @@ function initPointer() {
 
 /* ------------------------------------------------------------------------ */
 const safe = (fn) => { try { fn(); } catch (err) { console.error(err); } };
-[initNav, initReveal, initWords, initModels, initWork, initPresence, initPointer].forEach(safe);
+[initNav, initReveal, initWords, initModels, initWork, initPresence, initContact, initPointer].forEach(safe);
 requestAnimationFrame(frame);
 
 /* The film is prepared after first paint, a slice at a time, so the text is
