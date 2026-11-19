@@ -1,577 +1,95 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SKS Infra Projects | Expressways, Highways, Bridges, Railways, Water &amp; Transmission</title>
-<meta name="description" content="SKS Infra Projects builds expressways, highways, bridges and flyovers, railway electrification, water and power transmission infrastructure across India, under EPC, HAM, BOT and item-rate contracts.">
-<link rel="canonical" href="https://sksinfraprojects.com/">
-<meta name="theme-color" content="#030b18">
-<meta name="color-scheme" content="dark light">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="SKS Infra Projects">
-<meta property="og:title" content="SKS Infra Projects | We build the lines that move India">
-<meta property="og:description" content="Expressways, highways, bridges, railways, water and power transmission, delivered end to end under EPC, HAM, BOT and item-rate contracts.">
-<meta property="og:url" content="https://sksinfraprojects.com/">
-<meta property="og:image" content="https://sksinfraprojects.com/assets/img/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="en_IN">
-<meta name="twitter:card" content="summary_large_image">
-
-<link rel="icon" href="favicon.ico" sizes="48x48">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-
-<link rel="preload" href="assets/fonts/mona-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/main.css">
-<link rel="modulepreload" href="assets/js/main.js">
-<link rel="modulepreload" href="assets/js/world.js">
-<link rel="modulepreload" href="assets/js/renderer.js">
-<script>document.documentElement.className = 'js';</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "SKS Infra Projects Pvt. Ltd.",
-  "alternateName": "SKS Infra Projects",
-  "url": "https://sksinfraprojects.com/",
-  "logo": "https://sksinfraprojects.com/assets/img/icon-512.png",
-  "description": "Infrastructure company building expressways, highways, bridges and flyovers, railway electrification, water and power transmission infrastructure across India.",
-  "email": "info@sksinfraprojects.com",
-  "areaServed": { "@type": "Country", "name": "India" },
-  "address": { "@type": "PostalAddress", "addressLocality": "Agra", "addressRegion": "Uttar Pradesh", "addressCountry": "IN" },
-  "location": [
-    { "@type": "Place", "name": "Head Office", "address": { "@type": "PostalAddress", "addressLocality": "Agra", "addressRegion": "Uttar Pradesh", "addressCountry": "IN" } },
-    { "@type": "Place", "name": "Corporate Office", "address": { "@type": "PostalAddress", "addressLocality": "Noida", "addressRegion": "Uttar Pradesh", "addressCountry": "IN" } }
-  ],
-  "knowsAbout": ["Expressways", "Highways", "Bridges and flyovers", "Railway electrification", "Water infrastructure", "Power transmission and distribution", "EPC", "Hybrid Annuity Model", "Build Operate Transfer"]
-}
-</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SKS Infra Projects</title>
+<meta name="description" content="SKS Infra Projects. Our new website is coming soon.">
+<meta name="theme-color" content="#0b1724">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b1724'/%3E%3Crect x='12' y='29' width='16' height='6' rx='3' fill='%23f2a900'/%3E%3Crect x='36' y='29' width='16' height='6' rx='3' fill='%23f2a900'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #0b1724;
+    --bg-glow: #13304a;
+    --grid: rgba(255, 255, 255, 0.04);
+    --text: #f3f6f9;
+    --muted: #9fb0c0;
+    --accent: #f2a900;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 50% 40%, var(--bg-glow) 0%, transparent 60%),
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    background-position: center;
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 48px 20px;
+  }
+  .eyebrow {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-size: clamp(2.4rem, 7.5vw, 4.75rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+  .road {
+    width: 130px;
+    height: 5px;
+    margin: 30px auto;
+    border-radius: 3px;
+    background: repeating-linear-gradient(90deg, var(--accent) 0 18px, transparent 18px 28px);
+  }
+  .lead {
+    font-size: clamp(1.1rem, 2.6vw, 1.4rem);
+    max-width: 30ch;
+    line-height: 1.5;
+  }
+  .sub {
+    color: var(--muted);
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+  footer {
+    text-align: center;
+    padding: 24px 20px 28px;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+</style>
 </head>
-
 <body>
-<a class="skip" href="#main">Skip to content</a>
-
-<!-- shared icons -->
-<svg class="sprite" aria-hidden="true" focusable="false">
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M12.5 6.5 18 12l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M7 17 17 7M8.5 7H17v8.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v13M6.5 12.5 12 18l5.5-5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-</svg>
-
-<!-- ================================================================== -->
-<!-- Navigation                                                          -->
-<!-- ================================================================== -->
-<header class="nav" data-nav>
-  <div class="nav__bar">
-    <a class="brand" href="#top" aria-label="SKS Infra Projects, home">
-      <span class="brand__mark">
-        <img class="brand__img brand__img--light" src="assets/img/logo-mark-light.svg" width="96" height="34" alt="">
-        <img class="brand__img brand__img--color" src="assets/img/logo-mark.svg" width="96" height="34" alt="">
-      </span>
-      <span class="brand__name">Infra Projects</span>
-    </a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="#sectors">Sectors</a>
-      <a href="#delivery">Delivery</a>
-      <a href="#projects">Projects</a>
-      <a href="#presence">Presence</a>
-      <a href="#clients">Clients</a>
-    </nav>
-    <a class="btn btn--nav" href="#contact"><span>Get in touch</span><svg class="btn__icon"><use href="#i-arrow"/></svg></a>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu">
-      <span class="nav__toggle-label">Menu</span>
-      <span class="nav__toggle-bars" aria-hidden="true"><i></i><i></i></span>
-    </button>
-  </div>
-  <div class="nav__progress" aria-hidden="true"><i data-progress></i></div>
-</header>
-
-<div class="menu" id="menu" hidden>
-  <nav class="menu__links" aria-label="Menu">
-    <a href="#sectors"><span>01</span>Sectors</a>
-    <a href="#delivery"><span>02</span>Delivery</a>
-    <a href="#projects"><span>03</span>Projects</a>
-    <a href="#presence"><span>04</span>Presence</a>
-    <a href="#clients"><span>05</span>Clients</a>
-    <a href="#contact"><span>06</span>Contact</a>
-  </nav>
-  <div class="menu__foot">
-    <a href="mailto:info@sksinfraprojects.com">info@sksinfraprojects.com</a>
-    <span>Agra · Noida</span>
-  </div>
-</div>
-
-<main id="main">
-
-<!-- ================================================================== -->
-<!-- Hero                                                                -->
-<!-- ================================================================== -->
-<div class="curtain">
-<section class="hero" id="top" data-theme="dark" aria-labelledby="hero-title">
-  <!-- Film. To use real footage later, add:
-       <video class="hero__video" autoplay muted loop playsinline poster="assets/media/hero.jpg"><source src="assets/media/hero.mp4" type="video/mp4"></video>
-       directly inside .hero__media (see README). -->
-  <div class="hero__media" aria-hidden="true">
-    <div class="stage" data-stage="hero"><canvas data-sky></canvas><canvas data-lines></canvas></div>
-  </div>
-  <div class="hero__scrim" aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
-
-  <div class="hero__content container">
-    <p class="eyebrow hero__eyebrow"><i></i>Infrastructure, engineered end to end</p>
-    <h1 class="hero__title" id="hero-title">
-      <span class="line"><span>We build the</span></span>
-      <span class="line"><span>lines that</span></span>
-      <span class="line"><span><em>move India.</em></span></span>
-    </h1>
-    <p class="hero__lede">Expressways, highways, bridges, railways, water and power transmission, delivered from first alignment to final handover by one accountable team.</p>
-    <div class="hero__cta">
-      <a class="btn btn--primary" href="#sectors" data-magnetic><span>Explore what we build</span><svg class="btn__icon"><use href="#i-down"/></svg></a>
-      <a class="btn btn--ghost" href="#partners" data-magnetic><span>Work with us</span><svg class="btn__icon"><use href="#i-arrow"/></svg></a>
-    </div>
-  </div>
-
-  <div class="hero__foot container">
-    <a class="scrollcue" href="#about"><i></i><span>Scroll</span></a>
-    <p class="hero__coord" aria-hidden="true"><span>Agra HQ</span>27.18° N &nbsp;78.01° E</p>
-  </div>
-</section>
-
-<!-- ================================================================== -->
-<!-- Who we are                                                          -->
-<!-- ================================================================== -->
-<section class="manifesto sheet" id="about" data-theme="light" aria-labelledby="about-title">
-  <div class="container">
-    <p class="eyebrow" data-reveal><i></i>Who we are</p>
-    <h2 class="manifesto__text" id="about-title" data-words>We are an infrastructure company built around one discipline: <em>draw the line well, then build it exactly.</em> From national expressways to electrified rail corridors, from water mains to power networks, SKS Infra Projects takes public infrastructure from alignment to asset.</h2>
-
-    <div class="manifesto__grid">
-      <p class="manifesto__aside" data-reveal>Headquartered in Agra with a corporate office in Noida, our teams are on site across India's road, rail and power corridors, working for the authorities that plan the nation's growth.</p>
-      <ul class="pillars">
-        <li data-reveal style="--i:0">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 38h36M10 38V20l14-9 14 9v18M19 38V27h10v11"/><circle cx="24" cy="19" r="1.6"/></svg>
-          <h3>Engineering first</h3>
-          <p>Design, planning and method are settled before the first machine moves, so what gets built is what was promised.</p>
-        </li>
-        <li data-reveal style="--i:1">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="5"/><circle cx="24" cy="24" r="16"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6"/></svg>
-          <h3>One accountable team</h3>
-          <p>Civil, structural, electrical and systems work run to a single programme, with nothing lost at the hand-offs.</p>
-        </li>
-        <li data-reveal style="--i:2">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 34c8-14 14-20 20-20s12 6 20 20M4 34h40M14 34V22M24 34V14M34 34V22"/></svg>
-          <h3>Built to be relied on</h3>
-          <p>Public infrastructure is judged over decades. We build, test and hand over with that horizon in mind.</p>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-</div><!-- /.curtain -->
-
-<!-- ================================================================== -->
-<!-- Sectors: the corridor journey                                       -->
-<!-- ================================================================== -->
-<section class="journey sheet sheet--dark" id="sectors" data-theme="dark" aria-labelledby="sectors-title">
-  <div class="journey__track" data-journey>
-    <div class="journey__pin">
-      <div class="stage" data-stage="journey" aria-hidden="true"><canvas data-sky></canvas><canvas data-lines></canvas></div>
-      <div class="journey__scrim" aria-hidden="true"></div>
-      <div class="grain" aria-hidden="true"></div>
-
-      <div class="journey__ui container">
-        <a class="journey__skip" href="#delivery">Skip the journey<svg><use href="#i-down"/></svg></a>
-        <header class="journey__intro" data-chapter="intro">
-          <p class="eyebrow"><i></i>What we build</p>
-          <h2 id="sectors-title">One corridor.<br>Every kind of infrastructure.</h2>
-          <p>Scroll to travel a single line through all seven sectors we work in.</p>
-        </header>
-
-        <ol class="chapters">
-          <li class="chapter" data-chapter="0">
-            <p class="chapter__index"><b>01</b> / 07</p>
-            <h3>Expressways</h3>
-            <p class="chapter__lede">Greenfield, access-controlled corridors engineered for speed, safety and decades of traffic.</p>
-            <ul class="tags"><li>Greenfield alignments</li><li>Multi-lane carriageways</li><li>Interchanges and structures</li></ul>
-          </li>
-          <li class="chapter" data-chapter="1">
-            <p class="chapter__index"><b>02</b> / 07</p>
-            <h3>Highways</h3>
-            <p class="chapter__lede">National and state highways, bypasses and ring roads that carry traffic through and around growing cities.</p>
-            <ul class="tags"><li>Two-lane with paved shoulders to four-lane</li><li>Bypasses and ring roads</li><li>Widening and upgradation</li></ul>
-          </li>
-          <li class="chapter" data-chapter="2">
-            <p class="chapter__index"><b>03</b> / 07</p>
-            <h3>Bridges &amp; Flyovers</h3>
-            <p class="chapter__lede">The structures that lift an alignment over rivers, railways and junctions.</p>
-            <ul class="tags"><li>Major and minor bridges</li><li>Flyovers and viaducts</li><li>Vehicular underpasses</li></ul>
-          </li>
-          <li class="chapter" data-chapter="3">
-            <p class="chapter__index"><b>04</b> / 07</p>
-            <h3>Railways</h3>
-            <p class="chapter__lede">Overhead electrification and traction power that let trains run faster and heavier.</p>
-            <ul class="tags"><li>25 kV and 2×25 kV overhead equipment</li><li>Traction upgrades for higher speeds</li><li>Electrification of new and doubled lines</li></ul>
-          </li>
-          <li class="chapter" data-chapter="4">
-            <p class="chapter__index"><b>05</b> / 07</p>
-            <h3>Water</h3>
-            <p class="chapter__lede">Networks that carry water to where it is needed, and take it safely away.</p>
-            <ul class="tags"><li>Water supply networks</li><li>Pipelines and distribution</li><li>Stormwater drainage</li></ul>
-          </li>
-          <li class="chapter" data-chapter="5">
-            <p class="chapter__index"><b>06</b> / 07</p>
-            <h3>Transmission</h3>
-            <p class="chapter__lede">Power networks strengthened from the substation to the last service line.</p>
-            <ul class="tags"><li>HT and LT network infrastructure</li><li>Loss-reduction programmes</li><li>Transmission and distribution lines</li></ul>
-          </li>
-          <li class="chapter" data-chapter="6">
-            <p class="chapter__index"><b>07</b> / 07</p>
-            <h3>Integrated Infrastructure</h3>
-            <p class="chapter__lede">Industrial corridors and townships where roads, drainage, utilities and power arrive as one programme.</p>
-            <ul class="tags"><li>Industrial corridors</li><li>Internal roads and drainage</li><li>Utilities and power</li></ul>
-          </li>
-        </ol>
-
-        <div class="journey__hud" aria-hidden="true">
-          <span class="hud__label">Chainage</span>
-          <span class="hud__value" data-chainage>0+000</span>
-        </div>
-
-        <nav class="journey__rail" aria-label="Sector chapters">
-          <button type="button" data-jump="0" aria-label="Expressways"><i></i><span>Expressways</span></button>
-          <button type="button" data-jump="1" aria-label="Highways"><i></i><span>Highways</span></button>
-          <button type="button" data-jump="2" aria-label="Bridges and Flyovers"><i></i><span>Bridges &amp; Flyovers</span></button>
-          <button type="button" data-jump="3" aria-label="Railways"><i></i><span>Railways</span></button>
-          <button type="button" data-jump="4" aria-label="Water"><i></i><span>Water</span></button>
-          <button type="button" data-jump="5" aria-label="Transmission"><i></i><span>Transmission</span></button>
-          <button type="button" data-jump="6" aria-label="Integrated Infrastructure"><i></i><span>Integrated</span></button>
-        </nav>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================================================================== -->
-<!-- Delivery models                                                     -->
-<!-- ================================================================== -->
-<section class="models sheet" id="delivery" data-theme="light" aria-labelledby="delivery-title">
-  <div class="container">
-    <header class="section-head">
-      <p class="eyebrow" data-reveal><i></i>How we deliver</p>
-      <h2 id="delivery-title" data-reveal>Every contract model.<br>One standard of delivery.</h2>
-      <p class="section-head__lede" data-reveal>Public infrastructure is procured in different ways. We are structured to deliver under each of them, taking on as much of the asset's life as the project calls for.</p>
-    </header>
-
-    <div class="models__body" data-models>
-      <div class="models__tabs" role="tablist" aria-label="Contract models">
-        <button class="models__tab" role="tab" id="tab-epc" aria-controls="panel-epc" aria-selected="true" data-levels="full,none,full,shared" data-who="SKS|Authority|SKS|Maintenance period"><b>EPC</b><span>Engineering, Procurement &amp; Construction</span></button>
-        <button class="models__tab" role="tab" id="tab-ham" aria-controls="panel-ham" aria-selected="false" tabindex="-1" data-levels="full,shared,full,full" data-who="SKS|Shared|SKS|SKS"><b>HAM</b><span>Hybrid Annuity Model</span></button>
-        <button class="models__tab" role="tab" id="tab-bot" aria-controls="panel-bot" aria-selected="false" tabindex="-1" data-levels="full,full,full,full" data-who="SKS|SKS|SKS|SKS"><b>BOT</b><span>Build, Operate, Transfer</span></button>
-        <button class="models__tab" role="tab" id="tab-item" aria-controls="panel-item" aria-selected="false" tabindex="-1" data-levels="none,none,full,none" data-who="Authority|Authority|SKS|Authority"><b>Item-rate</b><span>Measured works at unit rates</span></button>
-      </div>
-
-      <div class="models__stage">
-        <div class="models__panels">
-          <div class="models__panel is-active" role="tabpanel" id="panel-epc" aria-labelledby="tab-epc">
-            <h3>A finished asset for a fixed price.</h3>
-            <p>One lump-sum contract for the complete facility. We carry design, procurement and construction, and hand over infrastructure that is ready to open, then stand behind it through the maintenance period.</p>
-            <p class="models__scope"><span>Our scope</span>Design · Procurement · Construction · Maintenance period</p>
-          </div>
-          <div class="models__panel" role="tabpanel" id="panel-ham" aria-labelledby="tab-ham" hidden>
-            <h3>Shared funding. Long-term accountability.</h3>
-            <p>A public-private partnership in which construction is part-funded by the authority and part by us. We then operate and maintain the road through the concession and are paid in annuities, so quality is our long-term interest too.</p>
-            <p class="models__scope"><span>Our scope</span>Design · Part-finance · Construction · Operation and maintenance</p>
-          </div>
-          <div class="models__panel" role="tabpanel" id="panel-bot" aria-labelledby="tab-bot" hidden>
-            <h3>We finance it, build it, run it and hand it back.</h3>
-            <p>We raise the capital, build the asset and operate it across the concession period before transferring it to the authority in the condition the agreement requires.</p>
-            <p class="models__scope"><span>Our scope</span>Design · Finance · Construction · Operation and maintenance · Transfer</p>
-          </div>
-          <div class="models__panel" role="tabpanel" id="panel-item" aria-labelledby="tab-item" hidden>
-            <h3>The authority's design, executed precisely.</h3>
-            <p>Works measured and paid at agreed unit rates against the client's drawings and bill of quantities. For projects where the scope is defined and disciplined execution is what matters.</p>
-            <p class="models__scope"><span>Our scope</span>Construction to the authority's design</p>
-          </div>
-        </div>
-
-        <div class="life" aria-hidden="true">
-          <p class="life__title">Who carries what</p>
-          <ol class="life__stages">
-            <li data-level="full"><span class="life__bar"><i></i></span><b>Design</b><em>SKS</em></li>
-            <li data-level="none"><span class="life__bar"><i></i></span><b>Finance</b><em>Authority</em></li>
-            <li data-level="full"><span class="life__bar"><i></i></span><b>Build</b><em>SKS</em></li>
-            <li data-level="shared"><span class="life__bar"><i></i></span><b>Operate &amp; maintain</b><em>Maintenance period</em></li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================================================================== -->
-<!-- Projects                                                            -->
-<!-- ================================================================== -->
-<section class="work" id="projects" data-theme="light" aria-labelledby="projects-title">
-  <div class="container">
-    <header class="section-head section-head--row">
-      <div>
-        <p class="eyebrow" data-reveal><i></i>Projects in progress</p>
-        <h2 id="projects-title" data-reveal>Where the line is<br>being drawn today.</h2>
-      </div>
-      <div class="work__nav" data-reveal>
-        <p>A cross-section of the work our teams are executing now for national and state authorities.</p>
-        <div class="work__buttons">
-          <button type="button" class="round" data-work-prev aria-label="Previous projects"><svg><use href="#i-arrow"/></svg></button>
-          <button type="button" class="round" data-work-next aria-label="Next projects"><svg><use href="#i-arrow"/></svg></button>
-        </div>
-      </div>
-    </header>
-  </div>
-
-  <!-- Each card's media holds a still from the film. To use a photograph instead, drop
-       <img src="assets/media/projects/your-photo.jpg" alt="..."> inside .card__media (see README). -->
-  <div class="work__rail" data-work-rail tabindex="0" role="region" aria-label="Projects, scroll horizontally">
-    <article class="card" data-still="bypass">
-      <div class="card__media"><div class="stage"><canvas data-sky></canvas><canvas data-lines></canvas></div><span class="card__tag">Highways</span></div>
-      <div class="card__body">
-        <h3>Amritsar Bypass</h3>
-        <p>Four-lane greenfield bypass with upgradation of the Amritsar–Khemkaran road (NH-354), under Bharatmala Pariyojana.</p>
-        <dl class="card__meta"><div><dt>Client</dt><dd>NHAI</dd></div><div><dt>Location</dt><dd>Punjab</dd></div><div><dt>Model</dt><dd>EPC · Joint venture</dd></div></dl>
-      </div>
-    </article>
-    <article class="card" data-still="ring">
-      <div class="card__media"><div class="stage"><canvas data-sky></canvas><canvas data-lines></canvas></div><span class="card__tag">Highways</span></div>
-      <div class="card__body">
-        <h3>Raebareli Ring Road, Phase II</h3>
-        <p>A four-lane ring road taking through traffic around Raebareli city.</p>
-        <dl class="card__meta"><div><dt>Client</dt><dd>MoRTH</dd></div><div><dt>Location</dt><dd>Uttar Pradesh</dd></div><div><dt>Model</dt><dd>HAM</dd></div></dl>
-      </div>
-    </article>
-    <article class="card" data-still="corridor">
-      <div class="card__media"><div class="stage"><canvas data-sky></canvas><canvas data-lines></canvas></div><span class="card__tag">Integrated Infrastructure</span></div>
-      <div class="card__body">
-        <h3>Defence Industrial Corridor, Jhansi</h3>
-        <p>Internal road network and drainage for the General Bipin Rawat Defence Industrial Corridor.</p>
-        <dl class="card__meta"><div><dt>Client</dt><dd>UPEIDA</dd></div><div><dt>Location</dt><dd>Uttar Pradesh</dd></div><div><dt>Scope</dt><dd>Roads · Drainage</dd></div></dl>
-      </div>
-    </article>
-    <article class="card" data-still="rail">
-      <div class="card__media"><div class="stage"><canvas data-sky></canvas><canvas data-lines></canvas></div><span class="card__tag">Railways</span></div>
-      <div class="card__body">
-        <h3>Deen Dayal Upadhyaya – Manpur traction upgrade</h3>
-        <p>Overhead equipment modification on the Up, Down and third lines to raise speed potential to 160 km/h.</p>
-        <dl class="card__meta"><div><dt>Client</dt><dd>Indian Railways</dd></div><div><dt>Location</dt><dd>Uttar Pradesh · Bihar</dd></div><div><dt>Model</dt><dd>Turnkey · Joint venture</dd></div></dl>
-      </div>
-    </article>
-    <article class="card" data-still="rail2">
-      <div class="card__media"><div class="stage"><canvas data-sky></canvas><canvas data-lines></canvas></div><span class="card__tag">Railways</span></div>
-      <div class="card__body">
-        <h3>Dhasa – Jetalsar electrification</h3>
-        <p>Traction overhead equipment and switching stations with the associated signalling, telecom and civil works.</p>
-        <dl class="card__meta"><div><dt>Client</dt><dd>RVNL</dd></div><div><dt>Location</dt><dd>Gujarat</dd></div><div><dt>Model</dt><dd>Turnkey</dd></div></dl>
-      </div>
-    </article>
-    <article class="card" data-still="power">
-      <div class="card__media"><div class="stage"><canvas data-sky></canvas><canvas data-lines></canvas></div><span class="card__tag">Transmission</span></div>
-      <div class="card__body">
-        <h3>RDSS network strengthening</h3>
-        <p>HT and LT infrastructure loss-reduction works across Tarn Taran, Kapurthala, Sri Muktsar Sahib and Fazilka.</p>
-        <dl class="card__meta"><div><dt>Client</dt><dd>PSPCL</dd></div><div><dt>Location</dt><dd>Punjab</dd></div><div><dt>Model</dt><dd>Turnkey</dd></div></dl>
-      </div>
-    </article>
-    <article class="card" data-still="hills">
-      <div class="card__media"><div class="stage"><canvas data-sky></canvas><canvas data-lines></canvas></div><span class="card__tag">Highways</span></div>
-      <div class="card__body">
-        <h3>Bhind Bypass, NH-552 Extension</h3>
-        <p>Ater realignment and Bhind bypass, built two-lane with paved shoulders.</p>
-        <dl class="card__meta"><div><dt>Client</dt><dd>MoRTH</dd></div><div><dt>Location</dt><dd>Madhya Pradesh</dd></div><div><dt>Model</dt><dd>EPC</dd></div></dl>
-      </div>
-    </article>
-  </div>
-  <div class="container">
-    <div class="work__progress" aria-hidden="true"><i data-work-progress></i></div>
-  </div>
-</section>
-
-<!-- ================================================================== -->
-<!-- Presence                                                            -->
-<!-- ================================================================== -->
-<section class="presence sheet sheet--dark" id="presence" data-theme="dark" aria-labelledby="presence-title">
-  <div class="grain" aria-hidden="true"></div>
-  <div class="container presence__grid">
-    <div class="presence__copy">
-      <p class="eyebrow" data-reveal><i></i>Where we work</p>
-      <h2 id="presence-title" data-reveal>On site across India's growth corridors.</h2>
-      <p class="presence__lede" data-reveal>From Punjab to Odisha and Gujarat to West Bengal, our project teams are at work across the north, centre, west and east of the country, coordinated from Agra and Noida.</p>
-
-      <ul class="states" data-states>
-        <li><button type="button" data-state="1"><span class="states__name">Uttar Pradesh</span><span class="states__places">Agra · Noida · Lucknow · Raebareli · Jhansi · Etawah · Mathura · Prayagraj · Gorakhpur · Barabanki · Shahjahanpur · Pt. Deen Dayal Upadhyaya Nagar</span><span class="states__kinds"><i class="k-office"></i><i class="k-road"></i><i class="k-rail"></i></span></button></li>
-        <li><button type="button" data-state="2"><span class="states__name">Punjab</span><span class="states__places">Amritsar · Tarn Taran · Kapurthala · Sri Muktsar Sahib · Fazilka</span><span class="states__kinds"><i class="k-road"></i><i class="k-power"></i></span></button></li>
-        <li><button type="button" data-state="3"><span class="states__name">Madhya Pradesh</span><span class="states__places">Bhind · Ratlam · Itarsi · Khandwa · Shridham</span><span class="states__kinds"><i class="k-road"></i><i class="k-rail"></i></span></button></li>
-        <li><button type="button" data-state="7"><span class="states__name">Maharashtra</span><span class="states__places">Bhusaval · Pachora · Badnera · Hinganghat · Ballarshah · Nandurbar</span><span class="states__kinds"><i class="k-rail"></i></span></button></li>
-        <li><button type="button" data-state="6"><span class="states__name">Gujarat</span><span class="states__places">Godhra · Dhasa · Jetalsar · Bhildi</span><span class="states__kinds"><i class="k-rail"></i></span></button></li>
-        <li><button type="button" data-state="5"><span class="states__name">Rajasthan</span><span class="states__places">Luni · Samdari</span><span class="states__kinds"><i class="k-rail"></i></span></button></li>
-        <li><button type="button" data-state="4"><span class="states__name">Haryana</span><span class="states__places">Palwal · Bhiwani</span><span class="states__kinds"><i class="k-rail"></i></span></button></li>
-        <li><button type="button" data-state="8"><span class="states__name">Bihar</span><span class="states__places">Gaya · Chhapra</span><span class="states__kinds"><i class="k-rail"></i></span></button></li>
-        <li><button type="button" data-state="9"><span class="states__name">West Bengal</span><span class="states__places">Howrah · Bandel · Saktigarh</span><span class="states__kinds"><i class="k-rail"></i></span></button></li>
-        <li><button type="button" data-state="10"><span class="states__name">Odisha</span><span class="states__places">Sonepur · Purunakatak</span><span class="states__kinds"><i class="k-rail"></i></span></button></li>
-      </ul>
-    </div>
-
-    <div class="presence__mapwrap">
-      <div class="presence__map" data-map role="img" aria-label="Map of India showing the states and cities where SKS Infra Projects is working"></div>
-      <ul class="legend">
-        <li><i class="k-office"></i>Offices</li>
-        <li><i class="k-road"></i>Roads and highways</li>
-        <li><i class="k-rail"></i>Railway electrification</li>
-        <li><i class="k-power"></i>Power distribution</li>
-      </ul>
-      <p class="presence__note">Schematic map for representation only; not to scale.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================================================================== -->
-<!-- Clients                                                             -->
-<!-- ================================================================== -->
-<section class="clients sheet" id="clients" data-theme="light" aria-labelledby="clients-title">
-  <div class="container">
-    <header class="section-head">
-      <p class="eyebrow" data-reveal><i></i>Who we work for</p>
-      <h2 id="clients-title" data-reveal>Trusted by the institutions<br>that build India.</h2>
-    </header>
-    <ul class="clients__grid">
-      <li data-reveal style="--i:0"><b>NHAI</b><span>National Highways Authority of India</span></li>
-      <li data-reveal style="--i:1"><b>MoRTH</b><span>Ministry of Road Transport &amp; Highways</span></li>
-      <li data-reveal style="--i:2"><b>Indian Railways</b><span>Zonal railways across the national network</span></li>
-      <li data-reveal style="--i:3"><b>RVNL</b><span>Rail Vikas Nigam Limited</span></li>
-      <li data-reveal style="--i:4"><b>IRCON</b><span>Ircon International Limited</span></li>
-      <li data-reveal style="--i:5"><b>UPEIDA</b><span>Uttar Pradesh Expressways Industrial Development Authority</span></li>
-      <li data-reveal style="--i:6"><b>PSPCL</b><span>Punjab State Power Corporation Limited</span></li>
-      <li data-reveal style="--i:7"><b>State PWDs</b><span>Public Works Departments</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================================================================== -->
-<!-- Work with us                                                        -->
-<!-- ================================================================== -->
-<section class="doors" id="partners" data-theme="light" aria-labelledby="partners-title">
-  <div class="container">
-    <header class="section-head">
-      <p class="eyebrow" data-reveal><i></i>Work with us</p>
-      <h2 id="partners-title" data-reveal>Whichever side of the<br>table you sit on.</h2>
-      <p class="section-head__lede" data-reveal>Evaluating a bid, assembling a consortium, financing a concession or planning a career: start here.</p>
-    </header>
-    <ul class="doors__grid">
-      <li data-reveal style="--i:0">
-        <a class="door" href="mailto:info@sksinfraprojects.com?subject=Credentials%20request" data-glow>
-          <span class="door__index">01</span>
-          <h3>Government and public clients</h3>
-          <p>Bid evaluation runs on facts. Ask for our experience certificates, technical capability statements and project references.</p>
-          <span class="door__cta">Request credentials<svg><use href="#i-arrow-up"/></svg></span>
-        </a>
-      </li>
-      <li data-reveal style="--i:1">
-        <a class="door" href="mailto:info@sksinfraprojects.com?subject=Partnership%20enquiry" data-glow>
-          <span class="door__index">02</span>
-          <h3>Joint venture and consortium partners</h3>
-          <p>We partner on large and specialised bids across roads, rail and power, and we bring execution strength to the table.</p>
-          <span class="door__cta">Propose a partnership<svg><use href="#i-arrow-up"/></svg></span>
-        </a>
-      </li>
-      <li data-reveal style="--i:2">
-        <a class="door" href="mailto:info@sksinfraprojects.com?subject=Investor%20and%20lender%20enquiry" data-glow>
-          <span class="door__index">03</span>
-          <h3>Investors and lenders</h3>
-          <p>Annuity and concession projects reward disciplined delivery and clear reporting. Speak to us about our pipeline.</p>
-          <span class="door__cta">Start a conversation<svg><use href="#i-arrow-up"/></svg></span>
-        </a>
-      </li>
-      <li data-reveal style="--i:3">
-        <a class="door" href="mailto:info@sksinfraprojects.com?subject=Careers" data-glow>
-          <span class="door__index">04</span>
-          <h3>Engineers and site leaders</h3>
-          <p>If you want your work to be measured in kilometres opened and corridors energised, we would like to hear from you.</p>
-          <span class="door__cta">Send your CV<svg><use href="#i-arrow-up"/></svg></span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================================================================== -->
-<!-- Contact                                                             -->
-<!-- ================================================================== -->
-<section class="contact sheet sheet--dark" id="contact" data-theme="dark" aria-labelledby="contact-title">
-  <div class="contact__glow" aria-hidden="true"><i></i><i></i><i></i></div>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="container">
-    <p class="eyebrow" data-reveal><i></i>Contact</p>
-    <h2 class="contact__title" id="contact-title" data-reveal>Let's build<br>what's <em>next.</em></h2>
-    <div class="contact__row" data-reveal>
-      <a class="btn btn--primary btn--lg" href="mailto:info@sksinfraprojects.com?subject=Enquiry%20from%20sksinfraprojects.com" data-magnetic><span>info@sksinfraprojects.com</span><svg class="btn__icon"><use href="#i-arrow-up"/></svg></a>
-    </div>
-    <ul class="offices">
-      <li data-reveal style="--i:0"><span class="offices__label">Head office</span><b>Agra</b><span>Uttar Pradesh, India</span></li>
-      <li data-reveal style="--i:1"><span class="offices__label">Corporate office</span><b>Noida</b><span>Uttar Pradesh, India</span></li>
-    </ul>
-  </div>
-</section>
-
-</main>
-
-<footer class="footer" data-theme="dark">
-  <div class="container footer__grid">
-    <div class="footer__brand">
-      <img src="assets/img/logo-lockup-light.svg" width="210" height="94" alt="SKS Infra Projects Pvt. Ltd." loading="lazy">
-      <p>Expressways, highways, bridges, railways, water and transmission infrastructure, built across India.</p>
-    </div>
-    <nav aria-label="Sectors">
-      <h2>Sectors</h2>
-      <ul>
-        <li><a href="#sectors" data-jump="0">Expressways</a></li>
-        <li><a href="#sectors" data-jump="1">Highways</a></li>
-        <li><a href="#sectors" data-jump="2">Bridges &amp; Flyovers</a></li>
-        <li><a href="#sectors" data-jump="3">Railways</a></li>
-        <li><a href="#sectors" data-jump="4">Water</a></li>
-        <li><a href="#sectors" data-jump="5">Transmission</a></li>
-        <li><a href="#sectors" data-jump="6">Integrated Infrastructure</a></li>
-      </ul>
-    </nav>
-    <nav aria-label="Company">
-      <h2>Company</h2>
-      <ul>
-        <li><a href="#about">Who we are</a></li>
-        <li><a href="#delivery">Delivery models</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#presence">Presence</a></li>
-        <li><a href="#clients">Clients</a></li>
-        <li><a href="#partners">Work with us</a></li>
-      </ul>
-    </nav>
-    <div>
-      <h2>Contact</h2>
-      <ul>
-        <li><a href="mailto:info@sksinfraprojects.com">info@sksinfraprojects.com</a></li>
-        <li>Head office: Agra, Uttar Pradesh</li>
-        <li>Corporate office: Noida, Uttar Pradesh</li>
-      </ul>
-    </div>
-  </div>
-  <div class="container footer__legal">
-    <p>© 2026 SKS Infra Projects Pvt. Ltd. All rights reserved.</p>
-    <p>Map boundaries: DataMeet India community, <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>.</p>
-    <a class="footer__top" href="#top">Back to top<svg><use href="#i-arrow-up"/></svg></a>
-  </div>
-</footer>
-
-<script type="module" src="assets/js/main.js"></script>
+  <main>
+    <p class="eyebrow">Coming soon</p>
+    <h1>SKS Infra Projects</h1>
+    <div class="road" aria-hidden="true"></div>
+    <p class="lead">Our new website is under construction.</p>
+    <p class="sub">Please check back soon.</p>
+  </main>
+  <footer>&copy; 2026 SKS Infra Projects</footer>
 </body>
 </html>
