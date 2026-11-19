@@ -94,6 +94,8 @@ The marks on the map are listed in `assets/js/presence.js`, with no names: a sin
 
 `assets/img/logo-mark.svg` and `logo-lockup.svg` were traced from the supplied JPEG. If the original vector artwork (AI, EPS, CDR, PDF or SVG) is available, replace these files with exports from it, keeping the same file names. The `-light` versions are for dark backgrounds.
 
+The browser-tab icon is separate: `favicon.ico` in the root and `assets/img/favicon.svg`. It shows only the road-K from the centre of the logo, because the full three-letter logo is too wide to read at tab size. If you replace it, raise the `?v=` number on the two icon links in `index.html` and in `404.html`, so that browsers fetch the new file instead of reusing the one they have stored.
+
 ## Notes
 
 - **Accessibility:** the page respects the "reduce motion" system setting (the film holds on still frames), works with a keyboard, and reads correctly with scripts switched off.
