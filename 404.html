@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page not found | SKS Infra Projects</title>
 <meta name="robots" content="noindex">
+<script>
+  // An address typed with a slash on the end (/privacy/) is not found, although /privacy exists: try again without it.
+  (function () {
+    var path = location.pathname;
+    if (!/[^/]\/+$/.test(path)) return;
+    location.replace(location.origin + '/' + path.replace(/^\/+|\/+$/g, '') + location.search + location.hash);
+  })();
+</script>
 <meta name="theme-color" content="#030b18">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">

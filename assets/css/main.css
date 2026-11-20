@@ -789,6 +789,7 @@ h2 { font-size: clamp(2.25rem, 5.2vw, 4.75rem); }
 .legal-hero .container { position: relative; z-index: 2; }
 .legal-hero h1 { margin-top: 1.5rem; font-size: clamp(2.75rem, 7.2vw, 6.25rem); font-stretch: 112%; letter-spacing: -0.046em; line-height: 0.98; }
 .legal-hero__meta { margin-top: 1.5rem; font: 500 0.76rem/1.6 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-dark-2); }
+.legal-hero__meta span { white-space: nowrap; }
 
 .legal { padding: clamp(3rem, 6vw, 5.5rem) 0 calc(var(--section) + var(--radius)); background: var(--white); }
 .legal__grid { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 46rem); justify-content: space-between; gap: 3rem clamp(2rem, 6vw, 6rem); align-items: start; }
@@ -820,7 +821,6 @@ h2 { font-size: clamp(2.25rem, 5.2vw, 4.75rem); }
 
 .legal__card { display: block; padding: 1.25rem 1.5rem; border-radius: 1rem; background: var(--paper); font-style: normal; line-height: 1.65; overflow-wrap: anywhere; }
 .legal__card strong { display: block; margin-bottom: 0.15rem; }
-.legal__todo { padding: 0.1rem 0.45rem; border-radius: 0.3rem; background: #ffe2a8; color: #5a3d00; }
 
 .check label a { color: var(--blue); text-underline-offset: 0.18em; }
 
@@ -831,6 +831,8 @@ h2 { font-size: clamp(2.25rem, 5.2vw, 4.75rem); }
   .legal__toc ol { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.5rem; }
 }
 @media (max-width: 44rem) {
+  .legal-hero__meta span { display: block; }
+  .legal-hero__meta .legal-hero__dot { display: none; }
   .legal__toc ol { grid-template-columns: minmax(0, 1fr); }
   .legal__body h2 { grid-template-columns: 2rem minmax(0, 1fr); }
   .legal__body section > p, .legal__body section > ul, .legal__body section > address { margin-left: 0; }
@@ -853,5 +855,4 @@ h2 { font-size: clamp(2.25rem, 5.2vw, 4.75rem); }
   .legal__body li::before { content: "\2022"; top: 0; left: 0.15rem; width: auto; height: auto; background: none; color: #000; }
   .legal-hero .eyebrow i { display: none; }
   .legal__summary, .legal__card { border: 1px solid #999; background: none; }
-  .legal__todo { background: none; color: #000; padding: 0; }
 }
