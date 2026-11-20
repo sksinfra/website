@@ -64,6 +64,18 @@ The form then posts the name, email, message and consent fields to that address 
 
 The page needs no script, and prints or saves as a PDF as a plain document.
 
+### After changing the stylesheet
+
+Browsers keep a copy of `assets/css/main.css` for a while after a visit. If the file changes and the pages still point at the same address, someone who visited recently can be shown a new page drawn with the old styles, which looks broken.
+
+So whenever `main.css` changes, also change the date after `?v=` in the stylesheet line near the top of **both** `index.html` and `privacy.html`:
+
+```html
+<link rel="stylesheet" href="assets/css/main.css?v=2026-11-20">
+```
+
+Use the day's date, and add a letter for a second change on the same day (`2026-11-20b`). The new address makes every browser fetch the new file together with the new page.
+
 ### Client logos
 
 Each tile in the Clients section is one `<li>` with an image from `assets/img/clients/`. To replace a logo, save the new file over the old one (same name) and update the `width` and `height` on its `<img>` so that it sits comfortably beside the others (roughly 110 to 200 wide and 40 to 76 tall). Vector (SVG) or large PNG files give the sharpest result. The logos belong to their respective organisations; check that you have their consent to display them.
