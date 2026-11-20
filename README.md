@@ -94,7 +94,7 @@ The marks on the map are listed in `assets/js/presence.js`, with no names: a sin
 
 `assets/img/logo-mark.svg` and `logo-lockup.svg` were traced from the supplied JPEG. If the original vector artwork (AI, EPS, CDR, PDF or SVG) is available, replace these files with exports from it, keeping the same file names. The `-light` versions are for dark backgrounds.
 
-The browser-tab icon is separate: `favicon.ico` in the root and `assets/img/favicon.svg`. It shows the whole SKS logo, in its own colours, on a white tile. If you replace it, raise the `?v=` number on the two icon links in `index.html` and in `404.html`, so that browsers fetch the new file instead of reusing the one they have stored.
+The browser-tab icon is separate and lives at the top level of the site: `favicon-32x32.png` and `favicon-192x192.png` (the two files the pages link to), `favicon.ico` (for anything that asks for that address directly) and `apple-touch-icon.png` (used when someone adds the site to a phone home screen). They show the whole SKS logo, in its own colours, on a white tile. Keep them as ordinary PNG files: Safari does not accept a vector (SVG) tab icon. Browsers, Safari especially, remember tab icons for a long time, so a replacement can take a while to appear for people who have visited before.
 
 ## Notes
 
