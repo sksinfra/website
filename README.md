@@ -9,6 +9,7 @@ It is a plain static site: no build step, no framework, no third-party scripts. 
 | Path | What it is |
 | --- | --- |
 | `index.html` | The landing page: all copy lives here. |
+| `privacy.html` | The privacy policy, published at `/privacy`. |
 | `404.html` | Shown for any address that does not exist. |
 | `assets/css/main.css` | The whole design system (colours, type, layout, motion). |
 | `assets/js/main.js` | Page behaviour: navigation, scroll effects, tabs, project rail. |
@@ -28,6 +29,8 @@ python3 -m http.server 8000
 ```
 
 Then open http://localhost:8000. (Opening `index.html` directly from the file system will not load the scripts; it needs a local server.)
+
+The privacy policy is at http://localhost:8000/privacy.html in this preview. The short address `/privacy`, which the links on the site use, only works on the live site.
 
 ## Common edits
 
@@ -50,6 +53,16 @@ To have enquiries delivered directly, without the visitor's email app, sign up w
 ```
 
 The form then posts the name, email, message and consent fields to that address and shows a thank-you message on the page. Leave `data-endpoint` empty to go back to the email-app behaviour.
+
+### Privacy policy
+
+`privacy.html` is the privacy policy. On the live site it answers at https://sksinfraprojects.com/privacy (GitHub Pages serves the file without the `.html`). The footer of the home page links to it, and so does the consent line under the contact form. Keep the file name: the `/privacy` address is the one given to LinkedIn for the company's developer application.
+
+- **Wording:** edit the text in `privacy.html`. When a change alters what the policy means, also change the effective date shown under the title.
+- **Grievance Officer:** the name and designation are in section 11 of the policy.
+- **Keep it true:** the policy says the site uses no analytics, advertising or tracking cookies, that enquiries are kept for up to 2 years and CVs for up to 12 months, and that a grievance is resolved within one month. If any of that changes (for example, if an analytics tool is added to the site), change the policy at the same time.
+
+The page needs no script, and prints or saves as a PDF as a plain document.
 
 ### Client logos
 
